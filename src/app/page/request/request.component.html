@@ -1,0 +1,151 @@
+<div class="box">
+  <div class="cont">
+    <mat-card>
+      <mat-card-title>Préstamos</mat-card-title>
+      <mat-stepper [linear]="true" #stepper>
+        <div>
+          <mat-step [stepControl]="formRequestOne">
+            <form
+              [formGroup]="formRequestOne"
+              (ngSubmit)="onNext($event)"
+              class="form"
+            >
+              <mat-card-subtitle>Crear usuarios</mat-card-subtitle>
+              <mat-form-field appearance="legacy">
+                <mat-label>Nombre</mat-label>
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  matInput
+                  placeholder="Pepe"
+                />
+                <mat-error *ngIf="nameField?.errors && nameField?.touched">
+                  <div *ngFor="let formMessage of formRequestMessages.name">
+                    <mat-error *ngIf="nameField?.hasError(formMessage.type)">
+                      {{ formMessage.message }}
+                    </mat-error>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="legacy">
+                <mat-label>Correo</mat-label>
+                <input
+                  type="text"
+                  id="mail"
+                  formControlName="mail"
+                  matInput
+                  placeholder="Pepe@zinode.com"
+                />
+                <mat-error *ngIf="mailField?.errors && mailField?.touched">
+                  <div *ngFor="let formMessage of formRequestMessages.mail">
+                    <mat-error *ngIf="mailField?.hasError(formMessage.type)">
+                      {{ formMessage.message }}
+                    </mat-error>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="legacy">
+                <mat-label>Cédula</mat-label>
+                <input
+                  type="text"
+                  id="document"
+                  formControlName="document"
+                  matInput
+                  placeholder="3245678"
+                />
+                <mat-error
+                  *ngIf="documentField?.errors && documentField?.touched"
+                >
+                  <div *ngFor="let formMessage of formRequestMessages.document">
+                    <mat-error
+                      *ngIf="documentField?.hasError(formMessage.type)"
+                    >
+                      {{ formMessage.message }}
+                    </mat-error>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <div class="contBtn">
+                <button
+                  type="submit"
+                  mat-raised-button
+                  color="primary"
+                  matStepperNext
+                >
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="formRequestTwo">
+            <form
+              [formGroup]="formRequestTwo"
+              (ngSubmit)="onSubmit($event)"
+              class="form"
+            >
+              <mat-card-subtitle>Solicitar préstamos</mat-card-subtitle>
+              <mat-form-field appearance="legacy">
+                <mat-label>Valor Solicitado</mat-label>
+                <input
+                  type="text"
+                  id="valueRequest"
+                  formControlName="valueRequest"
+                  matInput
+                  placeholder="10000"
+                />
+                <mat-error
+                  *ngIf="
+                    valueRequestField?.errors && valueRequestField?.touched
+                  "
+                >
+                  <div
+                    *ngFor="let formMessage of formRequestMessages.valueRequest"
+                  >
+                    <mat-error
+                      *ngIf="valueRequestField?.hasError(formMessage.type)"
+                    >
+                      {{ formMessage.message }}
+                    </mat-error>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Fecha pagar</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  id="datePayable"
+                  formControlName="datePayable"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error
+                  *ngIf="datePayableField?.errors && datePayableField?.touched"
+                >
+                  <div
+                    *ngFor="let formMessage of formRequestMessages.datePayable"
+                  >
+                    <mat-error
+                      *ngIf="datePayableField?.hasError(formMessage.type)"
+                    >
+                      {{ formMessage.message }}
+                    </mat-error>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <div class="contBtn">
+                <button type="submit" mat-raised-button color="primary">
+                  Realizar la solicitud
+                </button>
+              </div>
+            </form>
+          </mat-step>
+        </div>
+      </mat-stepper>
+    </mat-card>
+  </div>
+</div>

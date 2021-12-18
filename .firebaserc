@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "test-zinode": {
+      "hosting": {
+        "test-zinode": [
+          "test-zinode"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "test-zinode"
+  }
+}

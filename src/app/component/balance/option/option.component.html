@@ -1,0 +1,6 @@
+<mat-nav-list>
+    <div  mat-list-item (click)="closeBalance()">
+        <span *ngIf="balance===0">No tienes saldo o no has selecionado un usuario.</span>
+        <span *ngIf="balance!==0">Tu saldo es {{balance|currency}}.</span>
+    </div>
+</mat-nav-list>
