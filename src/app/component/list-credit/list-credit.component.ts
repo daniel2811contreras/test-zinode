@@ -45,7 +45,7 @@ export class ListCreditComponent implements OnInit {
       okay: credit.okay,
       paidOut: true,
     }).then(() =>{
-        this._snackBar.open(`elcredito de ${credit.name} por ${credit.valueRequest} fue pagado`)
+        this._snackBar.open(`elcredito de ${credit.name} por ${credit.valueRequest} fue pagado`,'x',{ duration: 3000 })
     })
   }
 

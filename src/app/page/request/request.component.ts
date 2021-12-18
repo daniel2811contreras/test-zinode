@@ -73,7 +73,7 @@ export class RequestComponent implements OnInit {
         [
           Validators.required,
           Validators.min(10000),
-          Validators.max(this.balance * 0.1),
+          Validators.max(environment.balance * 0.1),
         ],
       ],
       datePayable: [this.datePayable, []],
@@ -99,7 +99,7 @@ export class RequestComponent implements OnInit {
         {
           type: 'max',
           message: `El Valor maximo del credito es ${formatCurrency(
-            this.balance * 0.1,
+            environment.balance * 0.1,
             this.locale,
             '$ '
           )}`,
