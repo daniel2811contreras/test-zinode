@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BalanceComponent } from './component/balance/balance.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
 import { ROOT_REDUCERS } from './store/app.state';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -23,6 +22,7 @@ import {MatListModule} from '@angular/material/list';
 import { ListCreditComponent } from './component/list-credit/list-credit.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
