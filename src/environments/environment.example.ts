@@ -5,7 +5,16 @@
 export const environment = {
   production: false,
   balance: 1000000,
-  firebase: {}
+  firebase: {
+    apiKey: "",
+    authDomain: "test-zinode.firebaseapp.com",
+    databaseURL: "",
+    projectId: "test-zinode",
+    storageBucket: "test-zinode.appspot.com",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+  }
 };
 
 /*
